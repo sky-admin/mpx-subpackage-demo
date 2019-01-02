@@ -1,0 +1,11 @@
+{
+	"miniprogramRoot": "dist/",
+	"compileType": "miniprogram",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "touristappid",
+	"projectname": "mpxdemo",
+	"description": "A mpx project",
+	"condition": {}
+}
