@@ -7,18 +7,12 @@ var merge = require('webpack-merge')
 var program = require('commander')
 var webpackConfig = require('./webpack.main.conf')
 
-var prodEnv = require('../config/prod.env')
-var devEnv = require('../config/dev.env')
-
 program
   .option('-w, --watch', 'watch mode')
   .option('-p, --production', 'production release')
   .parse(process.argv)
 
 function runWebpack (cfg) {
-  // env
-  cfg.plugins.unshift(new webpack.DefinePlugin(program.production ? prodEnv : devEnv))
-
   if (program.production || program.watch) {
     const extendCfg = program.production ? { mode: 'production' } : { cache: true }
     if (Array.isArray(cfg)) {
